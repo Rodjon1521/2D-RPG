@@ -1,4 +1,7 @@
-﻿namespace _Scripts.Infrastructure
+﻿using UnityEditor.iOS;
+using UnityEngine;
+
+namespace _Scripts.Infrastructure
 {
     public class LoadLevelState : IPayLoadedState<string>
     {
@@ -13,7 +16,7 @@
 
         public void Enter(string sceneName)
         {
-            _sceneLoader.Load(sceneName);
+            _sceneLoader.Load(sceneName, OnLoaded);
         }
 
         public void Exit()
@@ -21,9 +24,18 @@
             
         }
 
-        public void Enter()
+        private void OnLoaded()
         {
-            throw new System.NotImplementedException();
+            GameObject hero = Instantiate("Hero/Hero");
+            Instantiate("Hud/Hud");
+            
+            _gameStateMachine.Enter<GameLoopState>();
+        }
+
+        private static GameObject Instantiate(string path)
+        {
+            var prefab = Resources.Load<GameObject>(path);
+            return Object.Instantiate(prefab);
         }
     }
 }

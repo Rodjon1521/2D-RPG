@@ -25,7 +25,7 @@ namespace _Scripts.Hero
             {
                 movementVector = _inputService.Axis;
             }
-
+            
             CharacterController.Move(movementVector * (MovementSpeed * Time.deltaTime));
         }
     }
