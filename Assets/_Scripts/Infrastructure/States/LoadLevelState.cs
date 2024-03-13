@@ -9,10 +9,11 @@ namespace _Scripts.Infrastructure.States
         private readonly SceneLoader _sceneLoader;
         private readonly IGameFactory _gameFactory;
 
-        public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader)
+        public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, IGameFactory gameFactory)
         {
             _gameStateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
+            _gameFactory = gameFactory;
         }
 
         public void Enter(string sceneName)
@@ -28,7 +29,6 @@ namespace _Scripts.Infrastructure.States
         private void OnLoaded()
         {
             GameObject hero = _gameFactory.CreateHero();
-            Debug.Log("Create hero");
             _gameFactory.CreateHud();
             
             _gameStateMachine.Enter<GameLoopState>();

@@ -1,5 +1,6 @@
 ﻿using System;
 using _Scripts.Infrastructure;
+using _Scripts.Infrastructure.Services;
 using _Scripts.Services.Input;
 using UnityEngine;
 
@@ -8,13 +9,13 @@ namespace _Scripts.Hero
     public class HeroMove : MonoBehaviour
     {
         public CharacterController CharacterController;
-        public float MovementSpeed;
+        public float MovementSpeed = 10f;
 
         private IInputService _inputService;
 
         private void Awake()
         {
-            _inputService = Game.InputService;
+            _inputService = AllServices.Container.Single<IInputService>();
         }
 
         private void Update()

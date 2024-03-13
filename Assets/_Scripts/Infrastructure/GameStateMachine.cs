@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
+using _Scripts.Infrastructure.Factory;
+using _Scripts.Infrastructure.Services;
 using _Scripts.Infrastructure.States;
 using Unity.VisualScripting;
 using IState = _Scripts.Infrastructure.States.IState;
@@ -12,12 +14,12 @@ namespace _Scripts.Infrastructure
         private readonly Dictionary<Type, IExitableState> _states;
         private IExitableState _activeState;
 
-        public GameStateMachine(SceneLoader sceneLoader)
+        public GameStateMachine(SceneLoader sceneLoader, AllServices services)
         {
             _states = new Dictionary<Type, IExitableState>()
             {
-                [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader),
+                [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services),
+                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, services.Single<IGameFactory>()),
                 [typeof(GameLoopState)] = new GameLoopState(this, sceneLoader)
             };
         }

@@ -1,16 +1,14 @@
-﻿using _Scripts.Services.Input;
-using UnityEngine;
+﻿using _Scripts.Infrastructure.Services;
 
 namespace _Scripts.Infrastructure
 {
     public class Game
     {
-        public static IInputService InputService;
         public GameStateMachine StateMachine;
 
         public Game(ICoroutineRunner coroutineRunner)
         {
-            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner));
+            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), AllServices.Container);
         }
     }
 }
