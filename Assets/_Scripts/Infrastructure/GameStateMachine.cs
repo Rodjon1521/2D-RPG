@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
+using _Scripts.Infrastructure.States;
 using Unity.VisualScripting;
+using IState = _Scripts.Infrastructure.States.IState;
 
 namespace _Scripts.Infrastructure
 {

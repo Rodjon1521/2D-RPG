@@ -1,12 +1,13 @@
-﻿using UnityEditor.iOS;
+﻿using _Scripts.Infrastructure.Factory;
 using UnityEngine;
 
-namespace _Scripts.Infrastructure
+namespace _Scripts.Infrastructure.States
 {
     public class LoadLevelState : IPayLoadedState<string>
     {
         private readonly GameStateMachine _gameStateMachine;
         private readonly SceneLoader _sceneLoader;
+        private readonly IGameFactory _gameFactory;
 
         public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader)
         {
@@ -26,16 +27,11 @@ namespace _Scripts.Infrastructure
 
         private void OnLoaded()
         {
-            GameObject hero = Instantiate("Hero/Hero");
-            Instantiate("Hud/Hud");
+            GameObject hero = _gameFactory.CreateHero();
+            Debug.Log("Create hero");
+            _gameFactory.CreateHud();
             
             _gameStateMachine.Enter<GameLoopState>();
-        }
-
-        private static GameObject Instantiate(string path)
-        {
-            var prefab = Resources.Load<GameObject>(path);
-            return Object.Instantiate(prefab);
         }
     }
 }

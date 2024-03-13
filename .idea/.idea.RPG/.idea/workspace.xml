@@ -4,18 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45349367-ccc1-4412-a7fa-f0b473aca7b7" name="Changes" comment="entry point and game state machine">
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/GameLoopState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/GameLoopState.cs.meta" afterDir="false" />
+    <list default="true" id="45349367-ccc1-4412-a7fa-f0b473aca7b7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/AssetManagement.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/AssetManagement/AssetPath.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/AssetManagement/AssetPath.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/AssetManagement/AssetProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/AssetManagement/AssetProvider.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/AssetManagement/IAssetProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/AssetManagement/IAssetProvider.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Factory.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Factory/GameFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Factory/GameFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Factory/IGameFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Factory/IGameFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Hero.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Hero.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Hud.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Hud/Hud.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Hud/Hud.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Hero/HeroMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Hero/HeroMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/GameStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/LoadLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/LoadLevelState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/BootstrapState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/BootstrapState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/BootstrapState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/BootstrapState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/GameLoopState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/GameLoopState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/GameLoopState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/GameLoopState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/IState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/IState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/IState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/IState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/LoadLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/LoadLevelState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/LoadLevelState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/LoadLevelState.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +115,9 @@
       <option name="presentableId" value="Default" />
       <updated>1707472379051</updated>
       <workItem from="1707472383020" duration="4793000" />
-      <workItem from="1709541888283" duration="3079000" />
+      <workItem from="1709541888283" duration="7990000" />
+      <workItem from="1709730965292" duration="53000" />
+      <workItem from="1710369687178" duration="314000" />
     </task>
     <task id="LOCAL-00001" summary="entry point and game state machine">
       <option name="closed" value="true" />
@@ -114,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709542863781</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="game loop state">
+      <option name="closed" value="true" />
+      <created>1709545115285</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709545115285</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +158,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="entry point and game state machine" />
-    <option name="LAST_COMMIT_MESSAGE" value="entry point and game state machine" />
+    <MESSAGE value="game loop state" />
+    <option name="LAST_COMMIT_MESSAGE" value="game loop state" />
   </component>
 </project>
