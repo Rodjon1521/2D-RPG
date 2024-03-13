@@ -6,9 +6,9 @@ namespace _Scripts.Infrastructure.Factory
 {
     public class GameFactory : IGameFactory
     {
-        private readonly IAssetProvider _assets;
+        private readonly IAssets _assets;
         
-        public GameFactory(IAssetProvider assets)
+        public GameFactory(IAssets assets)
         {
             _assets = assets;
         }

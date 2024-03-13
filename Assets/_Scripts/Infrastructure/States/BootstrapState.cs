@@ -1,4 +1,7 @@
-﻿using _Scripts.Services.Input;
+﻿using _Scripts.Infrastructure.AssetManagement;
+using _Scripts.Infrastructure.Factory;
+using _Scripts.Infrastructure.Services;
+using _Scripts.Services.Input;
 using UnityEngine;
 
 namespace _Scripts.Infrastructure.States
@@ -7,7 +10,7 @@ namespace _Scripts.Infrastructure.States
     {
         private const string Initial = "Initial";
         private readonly GameStateMachine _stateMachine;
-        private SceneLoader _sceneLoader;
+        private readonly SceneLoader _sceneLoader;
 
         public BootstrapState(GameStateMachine gameStateMachine, SceneLoader sceneLoader)
         {
@@ -29,6 +32,8 @@ namespace _Scripts.Infrastructure.States
         private void RegisterServices()
         {
             Game.InputService = RegisterInputService();
+
+            AllServices.Container.RegisterSingle<IGameFactory>(new GameFactory(AllServices.Container.Single<IAssets>()));
         }
 
         public void Exit()
