@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45349367-ccc1-4412-a7fa-f0b473aca7b7" name="Changes" comment="SaveLoadService">
+    <list default="true" id="45349367-ccc1-4412-a7fa-f0b473aca7b7" name="Changes" comment="ProgressWatchers">
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Logic.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Logic/SaveTrigger.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Logic/SaveTrigger.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Factory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Factory/GameFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Factory/IGameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Factory/IGameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Data/DataExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Data/DataExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/GameStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Services/SaveLoad/SaveLoadService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Services/SaveLoad/SaveLoadService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/BootstrapState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/BootstrapState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/LoadLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/LoadLevelState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +25,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/dev/Unity/RPG/Assets/_Scripts/Infrastructure/Factory/GameFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/dev/Unity/RPG/Assets/_Scripts/Infrastructure/GameBootstrapper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/dev/Unity/RPG/Assets/_Scripts/Infrastructure/GameStateMachine.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -103,7 +110,7 @@
       <workItem from="1707472383020" duration="4793000" />
       <workItem from="1709541888283" duration="7990000" />
       <workItem from="1709730965292" duration="53000" />
-      <workItem from="1710369687178" duration="8478000" />
+      <workItem from="1710369687178" duration="10504000" />
     </task>
     <task id="LOCAL-00001" summary="entry point and game state machine">
       <option name="closed" value="true" />
@@ -177,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710714694373</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ProgressWatchers">
+      <option name="closed" value="true" />
+      <created>1710715515014</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1710715515014</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +223,7 @@
     <MESSAGE value="persistent" />
     <MESSAGE value="LoadProgressState" />
     <MESSAGE value="SaveLoadService" />
-    <option name="LAST_COMMIT_MESSAGE" value="SaveLoadService" />
+    <MESSAGE value="ProgressWatchers" />
+    <option name="LAST_COMMIT_MESSAGE" value="ProgressWatchers" />
   </component>
 </project>
