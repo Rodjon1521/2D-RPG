@@ -9,7 +9,7 @@ namespace _Scripts.Data
 
         public PlayerProgress(string initialLevel)
         {
-            throw new NotImplementedException();
+            WorldData = new WorldData(initialLevel);
         }
     }
 }

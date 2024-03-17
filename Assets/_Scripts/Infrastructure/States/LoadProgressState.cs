@@ -26,7 +26,6 @@ namespace _Scripts.Infrastructure.States
 
         public void Exit()
         {
-            
         }
 
         private void LoadProgressOrInitNew()

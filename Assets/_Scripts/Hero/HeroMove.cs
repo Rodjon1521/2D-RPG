@@ -10,6 +10,7 @@ using UnityEngine.Serialization;
 
 namespace _Scripts.Hero
 {
+    [RequireComponent(typeof(CharacterController))]
     public class HeroMove : MonoBehaviour, ISavedProgress
     {
         private CharacterController _characterController;
@@ -20,6 +21,7 @@ namespace _Scripts.Hero
         private void Awake()
         {
             _inputService = AllServices.Container.Single<IInputService>();
+            _characterController = GetComponent<CharacterController>();
         }
 
         private void Update()
