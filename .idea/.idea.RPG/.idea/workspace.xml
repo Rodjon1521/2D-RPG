@@ -4,14 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45349367-ccc1-4412-a7fa-f0b473aca7b7" name="Changes" comment="ServiceLocator">
+    <list default="true" id="45349367-ccc1-4412-a7fa-f0b473aca7b7" name="Changes" comment="registration services">
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Data.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Data/DataExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Data/DataExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Data/PlayerProgress.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Data/PlayerProgress.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Data/PositionOnLevel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Data/PositionOnLevel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Data/Vector3Data.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Data/Vector3Data.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Data/WorldData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Data/WorldData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Services/PersistentProgress.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Services/PersistentProgress/IPersistentProgressService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Services/PersistentProgress/IPersistentProgressService.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Services/PersistentProgress/ISavedProgress.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Services/PersistentProgress/ISavedProgress.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Services/PersistentProgress/PersistentProgressService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Services/PersistentProgress/PersistentProgressService.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Hero/HeroMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Hero/HeroMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/GameStateMachine.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/BootstrapState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/BootstrapState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/LoadLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/LoadLevelState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Services/Input/IInputService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Services/Input/IInputService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +120,7 @@
       <workItem from="1707472383020" duration="4793000" />
       <workItem from="1709541888283" duration="7990000" />
       <workItem from="1709730965292" duration="53000" />
-      <workItem from="1710369687178" duration="2721000" />
+      <workItem from="1710369687178" duration="6198000" />
     </task>
     <task id="LOCAL-00001" summary="entry point and game state machine">
       <option name="closed" value="true" />
@@ -148,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710371392043</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="registration services">
+      <option name="closed" value="true" />
+      <created>1710372507376</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710372507376</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +197,7 @@
     <MESSAGE value="game factory" />
     <MESSAGE value="asset management" />
     <MESSAGE value="ServiceLocator" />
-    <option name="LAST_COMMIT_MESSAGE" value="ServiceLocator" />
+    <MESSAGE value="registration services" />
+    <option name="LAST_COMMIT_MESSAGE" value="registration services" />
   </component>
 </project>
