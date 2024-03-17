@@ -3,6 +3,8 @@ using UnityEngine;
 using System;
 using _Scripts.Infrastructure.Factory;
 using _Scripts.Infrastructure.Services;
+using _Scripts.Infrastructure.Services.PersistentProgress;
+using _Scripts.Infrastructure.Services.SaveLoad;
 using _Scripts.Infrastructure.States;
 using Unity.VisualScripting;
 using IState = _Scripts.Infrastructure.States.IState;
@@ -20,6 +22,7 @@ namespace _Scripts.Infrastructure
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services),
                 [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, services.Single<IGameFactory>()),
+                [typeof(LoadProgressState)] = new LoadProgressState(this, services.Single<IPersistentProgressService>(), services.Single<ISaveLoadService>()),
                 [typeof(GameLoopState)] = new GameLoopState(this, sceneLoader)
             };
         }

@@ -6,5 +6,10 @@ namespace _Scripts.Data
     public class PlayerProgress
     {
         public WorldData WorldData;
+
+        public PlayerProgress(string initialLevel)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
