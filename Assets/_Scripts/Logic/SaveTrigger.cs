@@ -9,14 +9,14 @@ namespace _Scripts.Logic
     {
         private ISaveLoadService _saveLoadService;
 
-        public BoxCollider Collider;
+        public BoxCollider2D Collider;
 
         private void Awake()
         {
             _saveLoadService = AllServices.Container.Single<ISaveLoadService>();
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
             _saveLoadService.SaveProgress();
             Debug.Log("Progress Saved.");
@@ -29,7 +29,8 @@ namespace _Scripts.Logic
                 return;
             
             Gizmos.color = new Color32(30, 200, 30, 130);
-            Gizmos.DrawCube(transform.position + Collider.center, Collider.size);
+            var position = transform.position;
+            Gizmos.DrawCube(new Vector2(position.x, position.y) + Collider.offset, Collider.size);
         }
     }
 }

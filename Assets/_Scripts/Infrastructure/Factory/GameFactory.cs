@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using _Scripts.Hero;
 using _Scripts.Infrastructure.AssetManagement;
 using _Scripts.Infrastructure.Services.PersistentProgress;
-using Unity.VisualScripting;
-using UnityEditor.iOS;
+using _Scripts.Logic;
+using _Scripts.UI;
 using UnityEngine;
 
 namespace _Scripts.Infrastructure.Factory
@@ -19,14 +21,21 @@ namespace _Scripts.Infrastructure.Factory
             _assets = assets;
         }
 
-        public GameObject CreateHero()
+        public GameObject HeroGameObject { get; set; }
+        public event Action HeroCreated;
+
+        public GameObject CreateHero(Vector3 at)
         {
-            return InstantiateRegistered(AssetPath.HeroPath);
+            HeroGameObject = InstantiateRegistered(AssetPath.HeroPath, at);
+            HeroCreated?.Invoke();
+            return HeroGameObject;
         }
 
-        public GameObject CreateHud()
+        public GameObject CreateHud(GameObject hero)
         {
-            return InstantiateRegistered(AssetPath.HudPath);
+            var hud = InstantiateRegistered(AssetPath.HudPath);
+            hud.GetComponent<ActorUI>().Construct(hero.GetComponent<IHealth>());
+            return hud;
         }
 
         public void Cleanup()
@@ -41,6 +50,14 @@ namespace _Scripts.Infrastructure.Factory
             RegisterProgressWatchers(gameObject);
             return gameObject;
         }
+        
+        private GameObject InstantiateRegistered(string prefabPath, Vector3 at)
+        {
+            GameObject gameObject = _assets.Instantiate(prefabPath, at);
+            RegisterProgressWatchers(gameObject);
+            return gameObject;
+        }
+
 
         private void RegisterProgressWatchers(GameObject gameObject)
         {
@@ -50,7 +67,7 @@ namespace _Scripts.Infrastructure.Factory
             }
         }
 
-        private void Register(ISavedProgressReader progressReader)
+        public void Register(ISavedProgressReader progressReader)
         {
             if (progressReader is ISavedProgress progressWriter)
             {

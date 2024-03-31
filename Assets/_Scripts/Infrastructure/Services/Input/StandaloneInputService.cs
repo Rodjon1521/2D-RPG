@@ -8,15 +8,20 @@ namespace _Scripts.Services.Input
         {
             get
             {
-                Vector2 axis = new Vector2(SimpleInput.GetAxis(Horizontal), SimpleInput.GetAxis(Vertical));
+                Vector2 axis = new Vector2(SimpleInput.GetAxisRaw(Horizontal), SimpleInput.GetAxisRaw(Vertical));
 
                 if (axis == Vector2.zero)
                 {
-                    axis = new Vector2(UnityEngine.Input.GetAxis(Horizontal), UnityEngine.Input.GetAxis(Vertical));
+                    axis = new Vector2(UnityEngine.Input.GetAxisRaw(Horizontal), UnityEngine.Input.GetAxisRaw(Vertical));
                 }
 
                 return axis;
             }
+        }
+
+        public override bool IsAttackButtonUp()
+        {
+            return SimpleInput.GetButtonUp(AttackButton);
         }
     }
 }

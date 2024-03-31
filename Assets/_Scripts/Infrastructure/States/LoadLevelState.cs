@@ -1,12 +1,14 @@
 ﻿using System;
 using _Scripts.Infrastructure.Factory;
 using _Scripts.Infrastructure.Services.PersistentProgress;
+using _Scripts.Logic;
 using UnityEngine;
 
 namespace _Scripts.Infrastructure.States
 {
     public class LoadLevelState : IPayLoadedState<string>
     {
+        private const string EnemySpawnerTag = "EnemySpawner";
         private readonly GameStateMachine _gameStateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly IGameFactory _gameFactory;
@@ -49,8 +51,19 @@ namespace _Scripts.Infrastructure.States
 
         private void InitGameWorld()
         {
-            GameObject hero = _gameFactory.CreateHero();
-            _gameFactory.CreateHud();
+            InitSpawners();
+            
+            GameObject hero = _gameFactory.CreateHero(GameObject.FindWithTag("SpawnPoint").transform.position);
+            _gameFactory.CreateHud(hero);
+        }
+
+        private void InitSpawners()
+        {
+            foreach (var spawnerObject in GameObject.FindGameObjectsWithTag(EnemySpawnerTag))
+            {
+                var spawner = spawnerObject.GetComponent<EnemySpawner>();
+                _gameFactory.Register(spawner);
+            }
         }
     }
 }

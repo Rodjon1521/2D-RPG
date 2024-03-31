@@ -1,39 +1,37 @@
-﻿using System;
-using _Scripts.Data;
-using _Scripts.Infrastructure;
+﻿using _Scripts.Data;
 using _Scripts.Infrastructure.Services;
 using _Scripts.Infrastructure.Services.PersistentProgress;
 using _Scripts.Services.Input;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 namespace _Scripts.Hero
 {
-    [RequireComponent(typeof(CharacterController))]
+    [RequireComponent(typeof(Rigidbody2D))]
     public class HeroMove : MonoBehaviour, ISavedProgress
     {
-        private CharacterController _characterController;
+        private Rigidbody2D _rigidbody;
         public float MovementSpeed = 10f;
+        public Vector2 MovementVector;
 
         private IInputService _inputService;
 
         private void Awake()
         {
             _inputService = AllServices.Container.Single<IInputService>();
-            _characterController = GetComponent<CharacterController>();
+            _rigidbody = GetComponent<Rigidbody2D>();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
-            Vector3 movementVector = Vector3.zero;
+            MovementVector = Vector2.zero;
 
             if (_inputService.Axis.sqrMagnitude > 0.001f)
             {
-                movementVector = _inputService.Axis;
+                MovementVector = _inputService.Axis.normalized;
             }
             
-            _characterController.Move(movementVector * (MovementSpeed * Time.deltaTime));
+            _rigidbody.MovePosition(_rigidbody.position + MovementVector * (MovementSpeed * Time.fixedDeltaTime));
         }
 
         public void LoadProgress(PlayerProgress progress)
@@ -50,9 +48,7 @@ namespace _Scripts.Hero
 
         private void Warp(Vector3Data to)
         {
-            _characterController.enabled = false;
             transform.position = to.AsUnityVector();
-            _characterController.enabled = true;
         }
 
         public void UpdateProgress(PlayerProgress progress)

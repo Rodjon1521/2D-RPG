@@ -35,7 +35,10 @@ namespace _Scripts.Infrastructure.States
 
         private PlayerProgress NewProgress()
         {
-            return new PlayerProgress("Main");
+            var progress = new PlayerProgress("Main");
+            progress.HeroState.MaxHP = 20;
+            progress.HeroState.ResetHP();
+            return progress;
         }
     }
 }
