@@ -1,33 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using _Scripts.Enemy;
 using _Scripts.Hero;
 using _Scripts.Infrastructure.AssetManagement;
+using _Scripts.Infrastructure.Services;
 using _Scripts.Infrastructure.Services.PersistentProgress;
 using _Scripts.Logic;
+using _Scripts.StaticData;
 using _Scripts.UI;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace _Scripts.Infrastructure.Factory
 {
     public class GameFactory : IGameFactory
     {
         private readonly IAssets _assets;
+        private readonly IStaticDataService _staticData;
 
         public List<ISavedProgressReader> ProgressReaders { get; } = new List<ISavedProgressReader>();
         public List<ISavedProgress> ProgressesWriters { get; } =  new List<ISavedProgress>();
         
-        public GameFactory(IAssets assets)
+        public GameFactory(IAssets assets, IStaticDataService staticData)
         {
             _assets = assets;
+            _staticData = staticData;
         }
 
-        public GameObject HeroGameObject { get; set; }
-        public event Action HeroCreated;
+        private GameObject HeroGameObject { get; set; }
 
         public GameObject CreateHero(Vector3 at)
         {
             HeroGameObject = InstantiateRegistered(AssetPath.HeroPath, at);
-            HeroCreated?.Invoke();
             return HeroGameObject;
         }
 
@@ -36,6 +39,23 @@ namespace _Scripts.Infrastructure.Factory
             var hud = InstantiateRegistered(AssetPath.HudPath);
             hud.GetComponent<ActorUI>().Construct(hero.GetComponent<IHealth>());
             return hud;
+        }
+
+        public GameObject CreateEnemy(EnemyTypeId enemyTypeId, Transform parent)
+        {
+            var enemyData = _staticData.ForEnemy(enemyTypeId);
+            GameObject enemy = Object.Instantiate(enemyData.Prefab, parent.position, Quaternion.identity, parent);
+            
+            var health = enemy.GetComponent<IHealth>();
+            health.Current = enemyData.Hp;
+            health.Max = enemyData.Hp;
+            
+            enemy.GetComponent<ActorUI>().Construct(health);
+            var movement = enemy.GetComponent<EnemyFollow>();
+            movement.Construct(HeroGameObject.transform);
+            movement.MoveSpeed = enemyData.MoveSpeed;
+            
+            return enemy;
         }
 
         public void Cleanup()
@@ -50,14 +70,13 @@ namespace _Scripts.Infrastructure.Factory
             RegisterProgressWatchers(gameObject);
             return gameObject;
         }
-        
+
         private GameObject InstantiateRegistered(string prefabPath, Vector3 at)
         {
             GameObject gameObject = _assets.Instantiate(prefabPath, at);
             RegisterProgressWatchers(gameObject);
             return gameObject;
         }
-
 
         private void RegisterProgressWatchers(GameObject gameObject)
         {

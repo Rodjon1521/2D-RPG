@@ -4,6 +4,7 @@ using _Scripts.Infrastructure.Services;
 using _Scripts.Infrastructure.Services.PersistentProgress;
 using _Scripts.Infrastructure.Services.SaveLoad;
 using _Scripts.Services.Input;
+using _Scripts.StaticData;
 using UnityEngine;
 
 namespace _Scripts.Infrastructure.States
@@ -44,8 +45,16 @@ namespace _Scripts.Infrastructure.States
             _services.RegisterSingle<IInputService>(InputService());
             _services.RegisterSingle<IAssets>(new AssetProvider());
             _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
-            _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssets>()));
+            RegisterStaticData();
+            _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssets>(), _services.Single<IStaticDataService>()));
             _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(_services.Single<IPersistentProgressService>(), _services.Single<IGameFactory>()));
+        }
+
+        private void RegisterStaticData()
+        {
+            var staticData = new StaticDataService();
+            staticData.LoadMonsters();
+            _services.RegisterSingle<IStaticDataService>(staticData);
         }
 
         private IInputService InputService()

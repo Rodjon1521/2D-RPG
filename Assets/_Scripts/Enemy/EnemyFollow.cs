@@ -11,21 +11,12 @@ namespace _Scripts.Enemy
         private Transform _heroTransform;
         private IGameFactory _gameFactory;
         
-        public float MovementSpeed;
+        public float MoveSpeed;
         public Vector2 MovementVector;
 
-        private void Start()
+        public void Construct(Transform heroTransform)
         {
-            _gameFactory = AllServices.Container.Single<IGameFactory>();
-
-            if (_gameFactory.HeroGameObject != null)
-            {
-                InitializeHeroTransform();
-            }
-            else
-            {
-                _gameFactory.HeroCreated += HeroCreated;
-            }
+            _heroTransform = heroTransform;
         }
 
         private void Update()
@@ -35,18 +26,8 @@ namespace _Scripts.Enemy
             {
                 MovementVector = (_heroTransform.transform.position - transform.position).normalized;
                 transform.position =
-                    Vector2.MoveTowards(transform.position, _heroTransform.position, MovementSpeed * Time.deltaTime);
+                    Vector2.MoveTowards(transform.position, _heroTransform.position, MoveSpeed * Time.deltaTime);
             }
-        }
-
-        private void HeroCreated()
-        {
-            InitializeHeroTransform();
-        }
-
-        private void InitializeHeroTransform()
-        {
-            _heroTransform = _gameFactory.HeroGameObject.transform;
         }
     }
 }
