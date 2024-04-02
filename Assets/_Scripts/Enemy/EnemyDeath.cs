@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections;
-using _Scripts.Enemy;
 using UnityEngine;
 
-namespace _Scripts.Logic
+namespace _Scripts.Enemy
 {
-    class EnemyDeath : MonoBehaviour
+    public class EnemyDeath : MonoBehaviour
     {
         public EnemyHealth Health;
         

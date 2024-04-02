@@ -4,24 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45349367-ccc1-4412-a7fa-f0b473aca7b7" name="Changes" comment="EnemySpawner">
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyDeath.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyDeath.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Services/IStaticDataService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Services/IStaticDataService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/StaticData.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/StaticData/EnemyStaticData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/StaticData/EnemyStaticData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/StaticData/EnemyTypeId.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/StaticData/EnemyTypeId.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/StaticData/StaticDataService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/StaticData/StaticDataService.cs.meta" afterDir="false" />
+    <list default="true" id="45349367-ccc1-4412-a7fa-f0b473aca7b7" name="Changes" comment="enemy spawner with static data">
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/LootSpawner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/LootSpawner.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyFollow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyFollow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemy/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemy/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyDeath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/AssetManagement/AssetPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/AssetManagement/AssetPath.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Factory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Factory/GameFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Factory/IGameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/Factory/IGameFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/BootstrapState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Infrastructure/States/BootstrapState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Logic/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Logic/EnemySpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +30,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/Temp/AnimatorStateReporter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Temp/HeroAnimator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Temp/IAnimationStateReader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/dev/Unity/RPG/Assets/_Scripts/Infrastructure/States/BootstrapState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../RoguelikeBattleCity/Assets/Scripts/Systems/MoveSystem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -121,7 +116,7 @@
       <workItem from="1709730965292" duration="53000" />
       <workItem from="1710369687178" duration="19363000" />
       <workItem from="1711919907324" duration="4102000" />
-      <workItem from="1712040899941" duration="4708000" />
+      <workItem from="1712040899941" duration="6305000" />
     </task>
     <task id="LOCAL-00001" summary="entry point and game state machine">
       <option name="closed" value="true" />
@@ -227,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711924206876</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="enemy spawner with static data">
+      <option name="closed" value="true" />
+      <created>1712046359902</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1712046359902</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +265,7 @@
     <MESSAGE value="SaveTrigger" />
     <MESSAGE value="GameRunner" />
     <MESSAGE value="EnemySpawner" />
-    <option name="LAST_COMMIT_MESSAGE" value="EnemySpawner" />
+    <MESSAGE value="enemy spawner with static data" />
+    <option name="LAST_COMMIT_MESSAGE" value="enemy spawner with static data" />
   </component>
 </project>

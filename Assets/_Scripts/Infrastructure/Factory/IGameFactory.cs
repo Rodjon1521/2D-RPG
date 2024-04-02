@@ -16,5 +16,6 @@ namespace _Scripts.Infrastructure.Factory
         void Cleanup();
         void Register(ISavedProgressReader savedProgressReader);
         GameObject CreateEnemy(EnemyTypeId enemyTypeId, Transform parent);
+        GameObject CreateLoot();
     }
 }

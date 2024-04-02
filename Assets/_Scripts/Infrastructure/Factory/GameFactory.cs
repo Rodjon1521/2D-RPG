@@ -54,8 +54,16 @@ namespace _Scripts.Infrastructure.Factory
             var movement = enemy.GetComponent<EnemyFollow>();
             movement.Construct(HeroGameObject.transform);
             movement.MoveSpeed = enemyData.MoveSpeed;
-            
+
+            var lootSpawner = enemy.GetComponentInChildren<LootSpawner>();
+            lootSpawner.Construct(this);
+
             return enemy;
+        }
+
+        public GameObject CreateLoot()
+        {
+            return InstantiateRegistered(AssetPath.Loot);
         }
 
         public void Cleanup()

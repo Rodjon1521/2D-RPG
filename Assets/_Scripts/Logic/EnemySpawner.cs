@@ -1,4 +1,5 @@
 ﻿using _Scripts.Data;
+using _Scripts.Enemy;
 using _Scripts.Infrastructure.Factory;
 using _Scripts.Infrastructure.Services;
 using _Scripts.Infrastructure.Services.PersistentProgress;
